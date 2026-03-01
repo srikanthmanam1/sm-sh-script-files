@@ -1,0 +1,41 @@
+Ex1: Install nano editor - - > sm-script1.sh 
+--------------------------------------------------------------------------------------------------------------------------
+#!/bin/bash
+
+# Update the package list
+echo "Updating package list..."
+apt update
+
+# Install nano
+echo "Installing nano editor..."
+apt install -y nano
+
+# Confirm installation
+if command -v nano &> /dev/null; then
+    echo "Nano was installed successfully!"
+else
+    echo "Nano installation failed."
+fi
+--------------------------------------------------------------------------------------------------------------------------
+Make it executable:
+chmod +x sm-script1.sh
+
+Run it:
+./sm-script1.sh
+--------------------------------------------------------------------------------------------------------------------------
+
+Create a directory in docker image --> home/documents
+in the docker image ubuntu container create documents directory
+mkdir home/documents
+
+To copy the script files into it, In the laptop terminal copy scripts to container
+sudo docker cp Documents/02_SM_Codes/Shell_Script_Files/. sm1:/home/documents/.
+
+change directory to sm1:/home/documents/Shell_Script_Files
+cd home/documents/Shell_Script_Files
+
+Make base script file executable:
+chmod +x sm0_update.sh
+
+Run it:
+./sm-script1.sh
